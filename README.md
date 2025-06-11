@@ -55,16 +55,27 @@ The following diagram illustrates how the list of users page works.
 
 #### User details page
 
-- Next, we created the typescript project to simulate the requests and responses of the application in the command line.
+The authenticated user details page is accessed by clicking on the settings button, which operates a number of internal requests to the private API to retrieve the user information.
 
-- The tools used were:
-  - Node.js
-  - TypeScript
-  - fetch Cookie
-  - node fetch
-- The code was written in TypeScript to ensure type safety and better maintainability.
+![User details](images/4-authenticated_user_request_initiator_headers.png)
 
-- The platform used cookies for handling sessions, and has a private API for the resources (users)
+The image above shows the request initiator for the authenticated user details page. The request is a POST request to the private API, which retrieves the user information in JSON format.
+Then the user information is displayed on the page as embedded javascript elements, through the settings..js file.
+
+
+
+![user_details process](images/5-authenticated_user_request_parameters.png)
+
+
+The image above shows the first request that retrieves the javaScript file that contains the user information. The request is a GET request to the private API, which retrieves the JavaScript file in JSON format.
+
+The following diagram illustrates how the authenticated user details page works.
+
+![authenticated user details process](images/custom/3-settings_process.drawio.png)
+
+
+
+
 
 ### Implementation approach
 
@@ -111,6 +122,18 @@ This approach ensures the script closely mimics the real application's workflow,
 
 ## Running the code
 
+- We created the typescript project to simulate the requests and responses of the application in the command line.
+
+- The tools used were:
+   - Node.js
+   - TypeScript
+   - fetch Cookie
+   - node fetch
+- The code was written in TypeScript to ensure type safety and better maintainability.
+
+- The platform used cookies for handling sessions, and has a private API for the resources (users)
+
+
 ### Steps to run the project
 
 To run the project, you need to do the following steps:
@@ -118,7 +141,7 @@ To run the project, you need to do the following steps:
 1- Clone the repository:
 
 ```bash
-git clone
+git clone https://github.com/Pericles001/Reverse_engineering_challenge.git
 ```
 
 2- Navigate to the project directory:
@@ -138,6 +161,22 @@ npm install
 ```bash
 npm run start
 ```
+
+- Alternatively, you can format the code using Prettier:
+
+```bash
+npm run format
+```
+
+Formatting the code will ensure that it adheres to the project's coding standards and improves readability.
+
+- You can also lint the code using ESLint:
+
+```bash
+npm run lint
+```
+
+Using ESLint will help you identify and fix potential issues in the code, ensuring it follows best practices and coding standards.
 
 #### Dependencies (In case you need to install them manually)
 
