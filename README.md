@@ -40,7 +40,11 @@ A success response is indicated by a 302 status code, which means the request wa
 
 
 
+A simplified diagram illustrates how the login process works.
 
+![login process](images/custom/1-login-process.drawio.png)
+
+This confirms that the system uses internal API calls and combines it with cookies for getting the results.
 
 
 #### List of users page
