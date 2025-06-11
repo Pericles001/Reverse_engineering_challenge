@@ -196,6 +196,13 @@ Using ESLint will help you identify and fix potential issues in the code, ensuri
     ├── typescript-eslint@8.33.1
     └── typescript@5.8.3
 
+## Total time
+
+
+The total time spent on this project was approximately 4 hours and 40 minutes, including the analysis of the application, implementation of the code, and testing.
+
+[More details on wakatime](https://wakatime.com/@pericles001/projects/qvkefxytsu?start=2025-06-05&end=2025-06-11)
+
 ## Author
 
 The code was written by [Pericles001](github.com/Pericles001).
