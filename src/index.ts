@@ -24,6 +24,14 @@ interface CurrentUser {
 }
 
 // Function to create a signed request with HMAC
+/**
+ * 
+ * @param params 
+ * @param secret 
+ * @returns payload, checkcode, fullPayload, timestamp
+ * 
+ */
+
 function createSignedRequest(params: Record<string, string>, secret = 'mys3cr3t') {
     // Get current timestamp in seconds
     const timestamp = Math.floor(Date.now() / 1000).toString();
