@@ -201,6 +201,14 @@ Using ESLint will help you identify and fix potential issues in the code, ensuri
 
 The total time spent on this project was approximately 4 hours and 40 minutes, including the analysis of the application, implementation of the code, and testing.
 
+![Wakatime stats](images/custom/time1.png)
+
+
+
+![Wakatime stats](images/custom/time2.png)
+
+
+
 [More details on wakatime](https://wakatime.com/@pericles001/projects/qvkefxytsu?start=2025-06-05&end=2025-06-11)
 
 ## Author
