@@ -159,8 +159,6 @@ async function main(): Promise<void> {
     };
   });
 
-  const timestamp = Math.floor(Date.now() / 1000);
-
   console.log('<....13- 🔑 Extracted token info....>', tokenInfo);
 
   console.log(
@@ -205,7 +203,7 @@ async function main(): Promise<void> {
   };
 
   console.log('<....19- 💾 Writing data to users.json....>');
-  fs.writeFileSync('users.json', JSON.stringify(result, null, 2), 'utf-8');
+  fs.writeFileSync('output/users.json', JSON.stringify(result, null, 2), 'utf-8');
   console.log('<....20- ✅ Data written to users.json successfully....>');
 
   // Close the browser
