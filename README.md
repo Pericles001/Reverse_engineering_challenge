@@ -211,6 +211,13 @@ The total time spent on this project was approximately 4 hours and 40 minutes, i
 
 [More details on wakatime](https://wakatime.com/@pericles001/projects/qvkefxytsu?start=2025-06-05&end=2025-06-11)
 
+
+
+
+## Quick demo
+
+[Link to demo](https://www.loom.com/share/519325f7dff74114861814c4a2853af8?sid=b2f9dbf6-75b9-41ef-ac31-3220174088cf)
+
 ## Author
 
 The code was written by [Pericles001](github.com/Pericles001).
