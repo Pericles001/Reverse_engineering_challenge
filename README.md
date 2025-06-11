@@ -72,6 +72,43 @@ However, the GET request calls upon a POST request to the private API to retriev
 
 - The platform used cookies for handling sessions, and has a private API for the resources (users)
 
+### Implementation approach
+
+The implementation follows these main steps to simulate the application's workflow and interact with its private API as an authenticated user:
+
+1. **Browser Automation for Authentication**
+   - The script uses Puppeteer to launch a headless browser and navigate to the application's login page.
+   - It extracts the CSRF nonce token from the login form.
+   - The script fills in the username and password fields and submits the form, just like a real user.
+   - After submission, it waits for the navigation to complete, ensuring the login was successful.
+
+2. **Session and Cookie Handling**
+   - Once logged in, the script extracts all session cookies from the browser.
+   - These cookies are stored in a cookie jar and reused for subsequent API requests, mimicking the browser's session management.
+
+3. **Fetching the List of Users**
+   - With the authenticated session, the script makes a POST request to the internal `/api/users` endpoint using `node-fetch` and `fetch-cookie` to include the session cookies.
+   - The response is parsed as JSON to retrieve the list of users.
+
+4. **Extracting API Tokens for Private Endpoints**
+   - The script navigates to the `/settings/tokens` page to extract hidden authentication tokens required for further API calls.
+   - These tokens are read directly from the page's HTML inputs.
+
+5. **Fetching the Authenticated User (Custom Signed API Call)**
+   - To retrieve the current authenticated user's information, the script must replicate a custom API call found in the application's JavaScript file (`settings.fefd531f237bcd266fc9.js`).
+   - This involves generating a POST request to `/api/settings` with a payload that includes authentication tokens, a timestamp, and a signature (`checkcode`) computed using HMAC-SHA1, exactly as the front-end does.
+   - The script implements the same signing logic as in the JS file to ensure the API accepts the request.
+
+6. **Data Aggregation and Output**
+   - The script combines the list of users and the current user's information.
+   - The result is saved to a `users.json` file in the project directory.
+
+7. **Error Handling and Cleanup**
+   - The script includes error handling to report issues during any step.
+   - Finally, it closes the browser and cleans up resources.
+
+This approach ensures the script closely mimics the real application's workflow, including authentication, session management, and secure API communication, by re-implementing the custom logic found in the application's JavaScript for signed API requests.
+
 ## Running the code
 
 
